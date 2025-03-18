@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { Gem } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 const Logo = () => {
   return (
     <div className="flex items-center gap-2">
-      <Gem className="w-8 h-8 text-gold" />
-      <span className="font-playfair text-2xl font-bold bg-gradient-to-r from-gold to-silver bg-clip-text text-transparent">
+      <ShieldCheck className="w-8 h-8 text-trust-blue" />
+      <span className="font-playfair text-2xl font-bold bg-gradient-to-r from-trust-blue to-trust-navy bg-clip-text text-transparent">
         Elegance
       </span>
     </div>

@@ -20,10 +20,16 @@ export default {
     },
     extend: {
       colors: {
-        gold: "#D4AF37",
-        silver: "#C0C0C0",
-        cream: "#FAF9F6",
-        dark: "#0A0908",
+        gold: "#3B82F6", // Changed from gold to trustworthy blue
+        silver: "#64748B", // Changed to slate blue
+        cream: "#F8FAFC", // Changed to very light blue-gray
+        dark: "#1E293B", // Changed to darker slate
+        trust: {
+          blue: "#3B82F6",
+          navy: "#1E40AF",
+          slate: "#64748B",
+          light: "#F1F5F9",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
