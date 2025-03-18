@@ -30,7 +30,8 @@ const Index = () => {
     if (!isMobile) {
       const masonryItems = document.querySelectorAll('.masonry-item');
       masonryItems.forEach((item) => {
-        const randomSpan = Math.floor(Math.random() * 20) + 20; // random number between 20-40
+        // Reduced row span to make images less tall
+        const randomSpan = Math.floor(Math.random() * 15) + 15; // random number between 15-30, down from 20-40
         (item as HTMLElement).style.setProperty('--row-span', randomSpan.toString());
       });
     }
@@ -107,8 +108,8 @@ const Index = () => {
   return (
     <div className="bg-cream">
       {/* Header */}
-      <header className={`fixed top-0 w-full backdrop-blur-md z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-cream/80 border-b border-trust-blue/20' : 'bg-transparent'
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-cream/80 backdrop-blur-md border-b border-trust-blue/20' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
@@ -120,24 +121,38 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-24 pb-20 px-4">
-        <div className="container mx-auto text-center">
-          <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+      {/* Hero Section with Full Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=2340&auto=format&fit=crop" 
+            alt="Luxury jewelry" 
+            className="w-full h-full object-cover opacity-60" 
+          />
+          <div className="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        {/* Content overlaid on the image */}
+        <div className="container relative z-10 mx-auto text-center px-4 pt-20">
+          <div className="mb-8">
+            <Logo />
+          </div>
+          <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/20 text-white backdrop-blur-sm rounded-full font-inter text-sm">
             Premium Jewelry Crafting
           </span>
-          <h2 className="font-playfair text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight">
+          <h2 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Crafting Timeless
             <span className="bg-gradient-to-r from-trust-blue to-trust-navy bg-clip-text text-transparent animate-shine">
               {" "}Elegance
             </span>
           </h2>
-          <p className="font-inter text-dark/70 max-w-2xl mx-auto mb-8 text-lg">
+          <p className="font-inter text-white/90 max-w-2xl mx-auto mb-8 text-lg">
             Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
           </p>
           <a href="#collections">
             <motion.button 
-              className="bg-dark text-cream font-inter px-8 py-3 rounded-full hover:bg-trust-blue transition-colors duration-300"
+              className="bg-trust-blue text-white font-inter px-8 py-3 rounded-full hover:bg-trust-navy transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -217,19 +232,17 @@ const Index = () => {
                             <img
                               src={item.imageUrl}
                               alt={item.title}
-                              className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex flex-col justify-end p-6">
-                              <div className="bg-cream/10 backdrop-blur-sm p-4 rounded-lg">
-                                <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
-                                <p className="text-cream/90 text-sm mt-1">{item.description}</p>
-                                <div className="flex flex-wrap gap-2 mt-3">
-                                  {item.subcategories.map((sub, idx) => (
-                                    <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/20 text-trust-blue text-xs rounded-full">
-                                      {sub}
-                                    </span>
-                                  ))}
-                                </div>
+                            <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6">
+                              <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
+                              <p className="text-cream/90 text-sm mt-1">{item.description}</p>
+                              <div className="flex flex-wrap gap-2 mt-3">
+                                {item.subcategories.map((sub, idx) => (
+                                  <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/20 backdrop-blur-sm text-white text-xs rounded-full">
+                                    {sub}
+                                  </span>
+                                ))}
                               </div>
                             </div>
                           </CardContent>
@@ -261,17 +274,15 @@ const Index = () => {
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex flex-col justify-end p-6">
-                    <div className="bg-cream/10 backdrop-blur-sm p-4 rounded-lg">
-                      <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
-                      <p className="text-cream/90 text-sm mt-1">{item.description}</p>
-                      <div className="flex flex-wrap gap-2 mt-3">
-                        {item.subcategories.map((sub, idx) => (
-                          <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/20 text-trust-blue text-xs rounded-full">
-                            {sub}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6">
+                    <h3 className="text-white text-xl font-playfair font-semibold">{item.title}</h3>
+                    <p className="text-white/90 text-sm mt-1">{item.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {item.subcategories.map((sub, idx) => (
+                        <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/30 backdrop-blur-sm text-white text-xs rounded-full">
+                          {sub}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </motion.div>
