@@ -1,9 +1,9 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Gem, Crown, Star, Users, MapPin, Phone, Mail, Heart } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { 
+import Logo from '@/components/Logo';
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -14,61 +14,92 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
   const isMobile = useIsMobile();
-  
-  // Collection items data
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Collection items data with subcategories
   const collections = [
     {
       id: 1,
       title: "Wedding Collection",
       description: "Timeless pieces for your special day",
       imageUrl: "https://images.unsplash.com/photo-1535632066274-1f274baa80cb?q=80&w=2340&auto=format&fit=crop",
-      category: "Bridal"
+      category: "Bridal",
+      subcategories: ["Engagement Rings", "Wedding Bands", "Bridal Sets"]
     },
     {
       id: 2,
       title: "Royal Necklaces",
       description: "Statement pieces fit for royalty",
       imageUrl: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2187&auto=format&fit=crop",
-      category: "Necklaces"
+      category: "Necklaces",
+      subcategories: ["Chokers", "Pendants", "Chains", "Mangalsutras"]
     },
     {
       id: 3,
       title: "Signature Rings",
       description: "Elegant designs for every occasion",
       imageUrl: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2340&auto=format&fit=crop",
-      category: "Rings"
+      category: "Rings",
+      subcategories: ["Solitaire", "Cocktail", "Eternity", "Statement"]
     },
     {
       id: 4,
       title: "Modern Earrings",
       description: "Contemporary styles with classic craftsmanship",
       imageUrl: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=2187&auto=format&fit=crop",
-      category: "Earrings"
+      category: "Earrings",
+      subcategories: ["Studs", "Hoops", "Drops", "Chandeliers"]
     },
     {
       id: 5,
       title: "Artisan Bracelets",
       description: "Handcrafted with precision and care",
       imageUrl: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2340&auto=format&fit=crop",
-      category: "Bracelets"
+      category: "Bracelets",
+      subcategories: ["Tennis", "Bangles", "Cuffs", "Charm"]
     },
     {
       id: 6,
       title: "Heirloom Pendants",
       description: "Treasures to pass down through generations",
       imageUrl: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=2340&auto=format&fit=crop",
-      category: "Pendants"
+      category: "Pendants",
+      subcategories: ["Religious", "Lockets", "Gemstone", "Pearl"]
     },
+    {
+      id: 7,
+      title: "Diamond Sets",
+      description: "Complete sets for special occasions",
+      imageUrl: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2340&auto=format&fit=crop",
+      category: "Sets",
+      subcategories: ["Bridal Sets", "Party Wear", "Traditional", "Modern"]
+    },
+    {
+      id: 8,
+      title: "Gold Chains",
+      description: "Timeless classics in pure gold",
+      imageUrl: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2574&auto=format&fit=crop",
+      category: "Chains",
+      subcategories: ["Link Chains", "Rope Chains", "Box Chains", "Snake Chains"]
+    }
   ];
 
   return (
     <div className="bg-cream">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-cream/80 backdrop-blur-md z-50 border-b border-gold/20">
+      <header className={`fixed top-0 w-full backdrop-blur-md z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-cream/80 border-b border-gold/20' : 'bg-transparent'
+      }`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="font-playfair text-2xl font-bold text-dark">
-            Elegance Jewelry
-          </h1>
+          <Logo />
           <nav className="hidden md:flex space-x-8 font-inter">
             <a href="#collections" className="text-dark/80 hover:text-gold transition-colors">Collections</a>
             <a href="#about" className="text-dark/80 hover:text-gold transition-colors">About</a>
@@ -164,31 +195,29 @@ const Index = () => {
           {/* Mobile Carousel View */}
           {isMobile && (
             <div className="py-8">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
+              <Carousel opts={{ align: "start", loop: true }} className="w-full">
                 <CarouselContent>
                   {collections.map((item) => (
                     <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
                         <Card className="overflow-hidden border-none shadow-lg">
-                          <CardContent className="p-0 relative">
+                          <CardContent className="p-0 relative group">
                             <img
                               src={item.imageUrl}
                               alt={item.title}
-                              className="h-64 w-full object-cover"
+                              className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex flex-col justify-end p-6">
                               <div className="bg-cream/10 backdrop-blur-sm p-4 rounded-lg">
                                 <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
                                 <p className="text-cream/90 text-sm mt-1">{item.description}</p>
-                                <span className="inline-block mt-2 px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
-                                  {item.category}
-                                </span>
+                                <div className="flex flex-wrap gap-2 mt-3">
+                                  {item.subcategories.map((sub, idx) => (
+                                    <span key={idx} className="inline-block px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
+                                      {sub}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
                             </div>
                           </CardContent>
@@ -207,28 +236,30 @@ const Index = () => {
           
           {/* Desktop Pinterest Grid View */}
           {!isMobile && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {collections.map((item, index) => (
                 <motion.div 
                   key={item.id}
-                  className={`relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ${
-                    index % 3 === 0 ? 'md:row-span-2' : ''
-                  }`}
+                  className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <img 
                     src={item.imageUrl} 
                     alt={item.title} 
-                    className={`w-full ${index % 3 === 0 ? 'h-full object-cover' : 'h-72 object-cover'}`}
+                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex flex-col justify-end p-6">
                     <div className="bg-cream/10 backdrop-blur-sm p-4 rounded-lg">
                       <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
                       <p className="text-cream/90 text-sm mt-1">{item.description}</p>
-                      <span className="inline-block mt-2 px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
-                        {item.category}
-                      </span>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {item.subcategories.map((sub, idx) => (
+                          <span key={idx} className="inline-block px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
+                            {sub}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -342,27 +373,28 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-playfair text-2xl font-bold text-gold mb-4">Elegance Jewelry</h3>
-              <p className="font-inter mb-4">Crafting timeless elegance since 1985</p>
+              <Logo />
+              <p className="font-inter mt-4 mb-4">Crafting timeless elegance since 1985</p>
               <div className="flex space-x-4">
                 <a href="#" className="text-cream hover:text-gold transition-colors">
                   <Heart className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-cream hover:text-gold transition-colors">
-                  <Heart className="h-5 w-5" />
+                  <Star className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-cream hover:text-gold transition-colors">
-                  <Heart className="h-5 w-5" />
+                  <Crown className="h-5 w-5" />
                 </a>
               </div>
             </div>
             <div>
               <h4 className="font-playfair text-lg font-semibold text-cream mb-4">Collections</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-gold transition-colors">Wedding Collection</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Royal Necklaces</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Signature Rings</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Modern Earrings</a></li>
+                {collections.slice(0, 4).map((item) => (
+                  <li key={item.id}>
+                    <a href="#" className="hover:text-gold transition-colors">{item.title}</a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
@@ -378,15 +410,19 @@ const Index = () => {
               <h4 className="font-playfair text-lg font-semibold text-cream mb-4">Newsletter</h4>
               <p className="font-inter mb-4">Subscribe to receive updates on new collections and special offers.</p>
               <div className="flex">
-                <input type="email" placeholder="Your email" className="px-4 py-2 bg-dark/50 border border-gold/20 rounded-l-full focus:outline-none focus:border-gold" />
-                <button className="bg-gold text-dark px-4 py-2 rounded-r-full hover:bg-gold/80 transition-colors">
+                <input 
+                  type="email" 
+                  placeholder="Your email" 
+                  className="px-4 py-2 bg-dark/50 border border-gold/20 rounded-l-full focus:outline-none focus:border-gold flex-1" 
+                />
+                <button className="bg-gold text-dark px-6 py-2 rounded-r-full hover:bg-gold/80 transition-colors whitespace-nowrap">
                   Subscribe
                 </button>
               </div>
             </div>
           </div>
           <div className="border-t border-gold/10 mt-12 pt-6 text-center">
-            <p className="font-inter text-sm">© 2023 Elegance Jewelry. All rights reserved.</p>
+            <p className="font-inter text-sm">© 2024 Elegance Jewelry. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -395,3 +431,4 @@ const Index = () => {
 };
 
 export default Index;
+
