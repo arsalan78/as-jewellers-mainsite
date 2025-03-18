@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Motion, spring } from 'framer-motion';
+import { motion, spring } from 'framer-motion';
 import { Gem, Crown, Star } from 'lucide-react';
 
 const Index = () => {
