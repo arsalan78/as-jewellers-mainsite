@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Crown, Star, Users, MapPin, Phone, Mail, Heart } from 'lucide-react';
@@ -12,6 +11,8 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
+import Testimonial from '@/components/Testimonial';
+import CraftsmenCarousel from '@/components/CraftsmenCarousel';
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -105,6 +106,31 @@ const Index = () => {
     }
   ];
 
+  // Testimonials data
+  const testimonials = [
+    {
+      name: "Emily Johnson",
+      role: "Bride",
+      content: "The engagement ring I purchased exceeded all my expectations. The craftsmanship is exquisite, and the attention to detail is remarkable.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      name: "Robert Chen",
+      role: "Anniversary Gift",
+      content: "I wanted something special for our 25th anniversary, and Elegance Jewelry delivered perfection. My wife was moved to tears.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      name: "Sophia Rodriguez",
+      role: "Collector",
+      content: "As someone who appreciates fine jewelry, I can say that Elegance stands out for their exceptional quality and creative designs.",
+      rating: 4,
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop"
+    }
+  ];
+
   return (
     <div className="bg-cream">
       {/* Header */}
@@ -163,51 +189,68 @@ const Index = () => {
       </section>
 
       {/* Features */}
-      <section className="min-h-screen flex items-center py-20 bg-dark text-cream">
+      <section className="min-h-screen flex items-center py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
               Why Choose Us
             </span>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6">Our Expertise</h2>
-            <p className="font-inter text-cream/70 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 text-dark">Our Expertise</h2>
+            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
               With decades of experience in gold and silver craftsmanship, we deliver unparalleled quality and service.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
               whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
               <ShieldCheck className="w-12 h-12 text-trust-blue mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Custom Designs</h3>
-              <p className="font-inter text-cream/70">Bring your vision to life with our bespoke jewelry service</p>
+              <p className="font-inter text-dark/70">Bring your vision to life with our bespoke jewelry service</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
               whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
               <Crown className="w-12 h-12 text-trust-blue mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Premium Quality</h3>
-              <p className="font-inter text-cream/70">Finest materials and exceptional craftsmanship</p>
+              <p className="font-inter text-dark/70">Finest materials and exceptional craftsmanship</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
               whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
               <Star className="w-12 h-12 text-trust-blue mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Heritage</h3>
-              <p className="font-inter text-cream/70">Years of expertise in gold and silver crafting</p>
+              <p className="font-inter text-dark/70">Years of expertise in gold and silver crafting</p>
             </motion.div>
           </div>
         </div>
       </section>
 
+      {/* Meet Our Craftsmen Section */}
+      <section className="py-20 px-4 bg-trust-blue/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+              The Team
+            </span>
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">Meet Our Craftsmen</h2>
+            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+              The skilled artisans behind every masterpiece in our collection.
+            </p>
+          </div>
+          
+          <CraftsmenCarousel />
+        </div>
+      </section>
+
       {/* Collections Section - Pinterest Style Grid */}
-      <section id="collections" className="min-h-screen py-20 px-4">
+      <section id="collections" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
@@ -232,7 +275,7 @@ const Index = () => {
                             <img
                               src={item.imageUrl}
                               alt={item.title}
-                              className="h-52 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6">
                               <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
@@ -289,6 +332,34 @@ const Index = () => {
               ))}
             </div>
           )}
+        </div>
+      </section>
+      
+      {/* Customer Testimonials Section */}
+      <section className="py-20 px-4 bg-trust-blue/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+              Customer Stories
+            </span>
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">What Our Clients Say</h2>
+            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+              Don't just take our word for it — see what our customers think about their Elegance pieces.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Testimonial
+                key={index}
+                name={testimonial.name}
+                role={testimonial.role}
+                content={testimonial.content}
+                rating={testimonial.rating}
+                image={testimonial.image}
+              />
+            ))}
+          </div>
         </div>
       </section>
       
@@ -391,46 +462,33 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Footer */}
-      <footer className="py-12 bg-dark/90 text-cream/80 border-t border-trust-blue/20">
+      {/* Footer - Simplified */}
+      <footer className="py-8 bg-dark/90 text-cream/80 border-t border-trust-blue/20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <Logo />
-              <p className="font-inter mt-4 mb-4">Crafting timeless elegance since 1985</p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-cream hover:text-trust-blue transition-colors">
-                  <Heart className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-cream hover:text-trust-blue transition-colors">
-                  <Star className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-cream hover:text-trust-blue transition-colors">
-                  <Crown className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-playfair text-lg font-semibold text-cream mb-4">Collections</h4>
-              <ul className="space-y-2">
-                {collections.slice(0, 4).map((item) => (
-                  <li key={item.id}>
-                    <a href="#" className="hover:text-trust-blue transition-colors">{item.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-playfair text-lg font-semibold text-cream mb-4">Information</h4>
-              <ul className="space-y-2">
-                <li><a href="#about" className="hover:text-trust-blue transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-trust-blue transition-colors">Custom Orders</a></li>
-                <li><a href="#" className="hover:text-trust-blue transition-colors">Care Guide</a></li>
-                <li><a href="#contact" className="hover:text-trust-blue transition-colors">Contact</a></li>
-              </ul>
+          <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+            <Logo />
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+                <Heart className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+                <Star className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+                <Crown className="h-5 w-5" />
+              </a>
+              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+                <Users className="h-5 w-5" />
+              </a>
             </div>
           </div>
-          <div className="border-t border-trust-blue/10 mt-12 pt-6 text-center">
+          <div className="flex flex-wrap justify-center gap-6 text-sm mb-6">
+            <a href="#" className="hover:text-trust-blue transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-trust-blue transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-trust-blue transition-colors">Shipping Info</a>
+            <a href="#" className="hover:text-trust-blue transition-colors">Returns & Exchanges</a>
+          </div>
+          <div className="text-center">
             <p className="font-inter text-sm">© 2024 Elegance Jewelry. All rights reserved.</p>
           </div>
         </div>
