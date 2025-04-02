@@ -54,9 +54,9 @@ const CraftsmenCarousel = () => {
       <Carousel opts={{ align: "start", loop: true }}>
         <CarouselContent>
           {craftsmen.map((craftsman, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-1">
+            <CarouselItem key={index} className="basis-full p-1">
               <div className="bg-white rounded-xl overflow-hidden shadow-md h-full">
-                <div className="h-48 overflow-hidden">
+                <div className="h-64 overflow-hidden">
                   <img 
                     src={craftsman.image} 
                     alt={craftsman.name} 
@@ -64,17 +64,17 @@ const CraftsmenCarousel = () => {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-playfair text-xl font-semibold">{craftsman.name}</h3>
-                  <p className="text-trust-blue font-medium">{craftsman.specialty}</p>
-                  <p className="text-trust-slate text-sm">{craftsman.experience} experience</p>
+                  <h3 className="font-playfair text-xl font-semibold text-elegance-navy">{craftsman.name}</h3>
+                  <p className="text-elegance-purple font-medium">{craftsman.specialty}</p>
+                  <p className="text-elegance-purple/70 text-sm">{craftsman.experience} experience</p>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <div className="flex justify-center mt-4">
-          <CarouselPrevious className="relative static mr-2 bg-trust-blue/10 text-trust-blue hover:bg-trust-blue hover:text-white" />
-          <CarouselNext className="relative static ml-2 bg-trust-blue/10 text-trust-blue hover:bg-trust-blue hover:text-white" />
+          <CarouselPrevious className="relative static mr-2 bg-elegance-pink/10 text-elegance-navy hover:bg-elegance-pink hover:text-white" />
+          <CarouselNext className="relative static ml-2 bg-elegance-pink/10 text-elegance-navy hover:bg-elegance-pink hover:text-white" />
         </div>
       </Carousel>
     </div>

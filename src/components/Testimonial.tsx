@@ -18,20 +18,20 @@ const Testimonial = ({ name, role, content, rating, image }: TestimonialProps) =
           <img src={image} alt={name} className="w-full h-full object-cover" />
         </div>
         <div>
-          <h3 className="font-playfair font-bold text-lg">{name}</h3>
-          <p className="text-trust-slate text-sm">{role}</p>
+          <h3 className="font-playfair font-bold text-lg text-elegance-navy">{name}</h3>
+          <p className="text-elegance-purple text-sm">{role}</p>
         </div>
       </div>
       <div className="flex mb-3">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={`w-4 h-4 ${i < rating ? "text-trust-blue" : "text-trust-slate/30"}`}
+            className={`w-4 h-4 ${i < rating ? "text-elegance-pink" : "text-elegance-purple/30"}`}
             fill={i < rating ? "currentColor" : "none"}
           />
         ))}
       </div>
-      <p className="text-dark/80 italic font-inter">{content}</p>
+      <p className="text-elegance-navy/80 italic font-inter">{content}</p>
     </div>
   );
 };

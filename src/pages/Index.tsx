@@ -31,8 +31,8 @@ const Index = () => {
     if (!isMobile) {
       const masonryItems = document.querySelectorAll('.masonry-item');
       masonryItems.forEach((item) => {
-        // Reduced row span to make images less tall
-        const randomSpan = Math.floor(Math.random() * 15) + 15; // random number between 15-30, down from 20-40
+        // Further reduced row span to make images less tall
+        const randomSpan = Math.floor(Math.random() * 10) + 12; // random number between 12-22, down from 15-30
         (item as HTMLElement).style.setProperty('--row-span', randomSpan.toString());
       });
     }
@@ -132,17 +132,17 @@ const Index = () => {
   ];
 
   return (
-    <div className="bg-cream">
+    <div className="bg-elegance-white">
       {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-cream/80 backdrop-blur-md border-b border-trust-blue/20' : 'bg-transparent'
+        isScrolled ? 'bg-elegance-white/80 backdrop-blur-md border-b border-elegance-pink/20' : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Logo />
           <nav className="hidden md:flex space-x-8 font-inter">
-            <a href="#collections" className="text-dark/80 hover:text-trust-blue transition-colors">Collections</a>
-            <a href="#about" className="text-dark/80 hover:text-trust-blue transition-colors">About</a>
-            <a href="#contact" className="text-dark/80 hover:text-trust-blue transition-colors">Contact</a>
+            <a href="#collections" className="text-elegance-navy/80 hover:text-elegance-pink transition-colors">Collections</a>
+            <a href="#about" className="text-elegance-navy/80 hover:text-elegance-pink transition-colors">About</a>
+            <a href="#contact" className="text-elegance-navy/80 hover:text-elegance-pink transition-colors">Contact</a>
           </nav>
         </div>
       </header>
@@ -161,15 +161,12 @@ const Index = () => {
         
         {/* Content overlaid on the image */}
         <div className="container relative z-10 mx-auto text-center px-4 pt-20">
-          <div className="mb-8">
-            <Logo />
-          </div>
-          <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/20 text-white backdrop-blur-sm rounded-full font-inter text-sm">
+          <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/20 text-white backdrop-blur-sm rounded-full font-inter text-sm">
             Premium Jewelry Crafting
           </span>
           <h2 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Crafting Timeless
-            <span className="bg-gradient-to-r from-trust-blue to-trust-navy bg-clip-text text-transparent animate-shine">
+            <span className="bg-gradient-to-r from-elegance-pink to-elegance-purple bg-clip-text text-transparent animate-shine">
               {" "}Elegance
             </span>
           </h2>
@@ -178,7 +175,7 @@ const Index = () => {
           </p>
           <a href="#collections">
             <motion.button 
-              className="bg-trust-blue text-white font-inter px-8 py-3 rounded-full hover:bg-trust-navy transition-colors duration-300"
+              className="bg-elegance-pink text-white font-inter px-8 py-3 rounded-full hover:bg-elegance-purple transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -192,55 +189,55 @@ const Index = () => {
       <section className="min-h-screen flex items-center py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+            <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
               Why Choose Us
             </span>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 text-dark">Our Expertise</h2>
-            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 text-elegance-navy">Our Expertise</h2>
+            <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto">
               With decades of experience in gold and silver craftsmanship, we deliver unparalleled quality and service.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-elegance-pink/10"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <ShieldCheck className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <ShieldCheck className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Custom Designs</h3>
-              <p className="font-inter text-dark/70">Bring your vision to life with our bespoke jewelry service</p>
+              <p className="font-inter text-elegance-navy/70">Bring your vision to life with our bespoke jewelry service</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-elegance-pink/10"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <Crown className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <Crown className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Premium Quality</h3>
-              <p className="font-inter text-dark/70">Finest materials and exceptional craftsmanship</p>
+              <p className="font-inter text-elegance-navy/70">Finest materials and exceptional craftsmanship</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-white shadow-md border border-trust-blue/10"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-white shadow-md border border-elegance-pink/10"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <Star className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <Star className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Heritage</h3>
-              <p className="font-inter text-dark/70">Years of expertise in gold and silver crafting</p>
+              <p className="font-inter text-elegance-navy/70">Years of expertise in gold and silver crafting</p>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Meet Our Craftsmen Section */}
-      <section className="py-20 px-4 bg-trust-blue/5">
+      <section className="py-20 px-4 bg-elegance-pink/5">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+            <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
               The Team
             </span>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">Meet Our Craftsmen</h2>
-            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-elegance-navy mb-6">Meet Our Craftsmen</h2>
+            <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto">
               The skilled artisans behind every masterpiece in our collection.
             </p>
           </div>
@@ -253,11 +250,11 @@ const Index = () => {
       <section id="collections" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+            <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
               Our Showcase
             </span>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">Collections</h2>
-            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-elegance-navy mb-6">Collections</h2>
+            <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto">
               Explore our carefully curated collections of handcrafted jewelry.
             </p>
           </div>
@@ -275,14 +272,14 @@ const Index = () => {
                             <img
                               src={item.imageUrl}
                               alt={item.title}
-                              className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6">
-                              <h3 className="text-cream text-xl font-playfair font-semibold">{item.title}</h3>
-                              <p className="text-cream/90 text-sm mt-1">{item.description}</p>
+                              <h3 className="text-elegance-white text-xl font-playfair font-semibold">{item.title}</h3>
+                              <p className="text-elegance-white/90 text-sm mt-1">{item.description}</p>
                               <div className="flex flex-wrap gap-2 mt-3">
                                 {item.subcategories.map((sub, idx) => (
-                                  <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/20 backdrop-blur-sm text-white text-xs rounded-full">
+                                  <span key={idx} className="inline-block px-3 py-1 bg-elegance-pink/20 backdrop-blur-sm text-white text-xs rounded-full">
                                     {sub}
                                   </span>
                                 ))}
@@ -295,8 +292,8 @@ const Index = () => {
                   ))}
                 </CarouselContent>
                 <div className="flex justify-center mt-4">
-                  <CarouselPrevious className="relative static h-10 w-10 mr-2 bg-trust-blue/10 text-trust-blue hover:bg-trust-blue hover:text-cream" />
-                  <CarouselNext className="relative static h-10 w-10 ml-2 bg-trust-blue/10 text-trust-blue hover:bg-trust-blue hover:text-cream" />
+                  <CarouselPrevious className="relative static h-10 w-10 mr-2 bg-elegance-pink/10 text-elegance-navy hover:bg-elegance-pink hover:text-elegance-white" />
+                  <CarouselNext className="relative static h-10 w-10 ml-2 bg-elegance-pink/10 text-elegance-navy hover:bg-elegance-pink hover:text-elegance-white" />
                 </div>
               </Carousel>
             </div>
@@ -322,7 +319,7 @@ const Index = () => {
                     <p className="text-white/90 text-sm mt-1">{item.description}</p>
                     <div className="flex flex-wrap gap-2 mt-3">
                       {item.subcategories.map((sub, idx) => (
-                        <span key={idx} className="inline-block px-3 py-1 bg-trust-blue/30 backdrop-blur-sm text-white text-xs rounded-full">
+                        <span key={idx} className="inline-block px-3 py-1 bg-elegance-pink/30 backdrop-blur-sm text-white text-xs rounded-full">
                           {sub}
                         </span>
                       ))}
@@ -336,14 +333,14 @@ const Index = () => {
       </section>
       
       {/* Customer Testimonials Section */}
-      <section className="py-20 px-4 bg-trust-blue/5">
+      <section className="py-20 px-4 bg-elegance-pink/5">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+            <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
               Customer Stories
             </span>
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">What Our Clients Say</h2>
-            <p className="font-inter text-dark/70 max-w-2xl mx-auto">
+            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-elegance-navy mb-6">What Our Clients Say</h2>
+            <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto">
               Don't just take our word for it — see what our customers think about their Elegance pieces.
             </p>
           </div>
@@ -364,31 +361,23 @@ const Index = () => {
       </section>
       
       {/* About Us Section */}
-      <section id="about" className="min-h-screen flex items-center py-20 px-4 bg-gradient-to-b from-cream to-trust-blue/10">
+      <section id="about" className="min-h-screen flex items-center py-20 px-4 bg-gradient-to-b from-elegance-white to-elegance-pink/10">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+              <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
                 Our Story
               </span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold text-dark mb-6">About Elegance Jewelry</h2>
-              <p className="font-inter text-dark/80 mb-6 leading-relaxed">
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold text-elegance-navy mb-6">About Elegance Jewelry</h2>
+              <p className="font-inter text-elegance-navy/80 mb-6 leading-relaxed">
                 Founded in 1985, Elegance Jewelry has been crafting exquisite gold and silver pieces for over three decades. Our journey began with a simple vision: to create jewelry that captures moments and preserves memories.
               </p>
-              <p className="font-inter text-dark/80 mb-6 leading-relaxed">
+              <p className="font-inter text-elegance-navy/80 mb-6 leading-relaxed">
                 What sets us apart is our dedication to traditional craftsmanship while embracing modern design principles. Each piece is meticulously handcrafted by our team of experienced artisans, ensuring unparalleled quality and attention to detail.
               </p>
-              <p className="font-inter text-dark/80 mb-8 leading-relaxed">
+              <p className="font-inter text-elegance-navy/80 mb-8 leading-relaxed">
                 We believe that jewelry is more than just an accessory – it's a personal statement, a family heirloom, and a timeless treasure. This philosophy guides our design process and customer service approach.
               </p>
-              <motion.button 
-                className="bg-dark text-cream font-inter px-8 py-3 rounded-full hover:bg-trust-blue transition-colors duration-300 flex items-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Users className="mr-2 h-5 w-5" />
-                Meet Our Team
-              </motion.button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <img 
@@ -417,76 +406,76 @@ const Index = () => {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center py-20 px-4 bg-dark text-cream">
+      <section id="contact" className="min-h-screen flex items-center py-20 px-4 bg-elegance-navy text-elegance-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <span className="inline-block mb-4 px-4 py-1 bg-trust-blue/10 text-trust-blue rounded-full font-inter text-sm">
+            <span className="inline-block mb-4 px-4 py-1 bg-elegance-pink/10 text-elegance-pink rounded-full font-inter text-sm">
               Get In Touch
             </span>
             <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6">Contact Us</h2>
-            <p className="font-inter text-cream/70 max-w-2xl mx-auto">
+            <p className="font-inter text-elegance-white/70 max-w-2xl mx-auto">
               Have questions about our collections or custom orders? Reach out to us, and our team will be happy to assist you.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <MapPin className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <MapPin className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Visit Us</h3>
-              <p className="font-inter text-cream/70">123 Elegance Boulevard, Gold District, 10001</p>
+              <p className="font-inter text-elegance-white/70">123 Elegance Boulevard, Gold District, 10001</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <Phone className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <Phone className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Call Us</h3>
-              <p className="font-inter text-cream/70">+1 (800) ELEGANCE</p>
-              <p className="font-inter text-cream/70">Monday - Saturday: 9am - 7pm</p>
+              <p className="font-inter text-elegance-white/70">+1 (800) ELEGANCE</p>
+              <p className="font-inter text-elegance-white/70">Monday - Saturday: 9am - 7pm</p>
             </motion.div>
             <motion.div 
-              className="text-center p-6 rounded-2xl bg-dark/50 backdrop-blur border border-trust-blue/20"
-              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(59, 130, 246, 0.5)" }}
+              className="text-center p-6 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
+              whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(223, 195, 194, 0.5)" }}
               transition={{ duration: 0.3 }}
             >
-              <Mail className="w-12 h-12 text-trust-blue mx-auto mb-4" />
+              <Mail className="w-12 h-12 text-elegance-pink mx-auto mb-4" />
               <h3 className="font-playfair text-xl mb-2">Email Us</h3>
-              <p className="font-inter text-cream/70">info@elegancejewelry.com</p>
-              <p className="font-inter text-cream/70">custom@elegancejewelry.com</p>
+              <p className="font-inter text-elegance-white/70">info@elegancejewelry.com</p>
+              <p className="font-inter text-elegance-white/70">custom@elegancejewelry.com</p>
             </motion.div>
           </div>
         </div>
       </section>
       
       {/* Footer - Simplified */}
-      <footer className="py-8 bg-dark/90 text-cream/80 border-t border-trust-blue/20">
+      <footer className="py-8 bg-elegance-navy/90 text-elegance-white/80 border-t border-elegance-pink/20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center mb-6">
             <Logo />
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+              <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
                 <Heart className="h-5 w-5" />
               </a>
-              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+              <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
                 <Star className="h-5 w-5" />
               </a>
-              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+              <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
                 <Crown className="h-5 w-5" />
               </a>
-              <a href="#" className="text-cream hover:text-trust-blue transition-colors">
+              <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
                 <Users className="h-5 w-5" />
               </a>
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm mb-6">
-            <a href="#" className="hover:text-trust-blue transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-trust-blue transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-trust-blue transition-colors">Shipping Info</a>
-            <a href="#" className="hover:text-trust-blue transition-colors">Returns & Exchanges</a>
+            <a href="#" className="hover:text-elegance-pink transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-elegance-pink transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-elegance-pink transition-colors">Shipping Info</a>
+            <a href="#" className="hover:text-elegance-pink transition-colors">Returns & Exchanges</a>
           </div>
           <div className="text-center">
             <p className="font-inter text-sm">© 2024 Elegance Jewelry. All rights reserved.</p>
