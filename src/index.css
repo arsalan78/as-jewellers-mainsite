@@ -35,6 +35,7 @@
   body {
     @apply bg-white text-elegance-navy;
     font-feature-settings: "rlig" 1, "calt" 1;
+    padding-bottom: 50px; /* Add padding to prevent content from being hidden under fixed footer */
   }
   
   /* Smooth scrolling */
@@ -69,12 +70,12 @@
 
 /* Highlighted tag for better visibility */
 .highlight-tag {
-  @apply bg-elegance-pink/50 text-elegance-navy font-medium;
+  @apply bg-elegance-pink/80 text-elegance-navy font-medium;
 }
 
 /* Fixed footer */
 .fixed-footer {
-  @apply bg-elegance-navy/90 border-t border-elegance-pink/20 py-1;
+  @apply bg-elegance-navy border-t border-elegance-pink/20 py-1;
 }
 
 /* Add masonry effect for collections grid */
@@ -118,4 +119,3 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
-
