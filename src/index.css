@@ -69,17 +69,12 @@
 
 /* Highlighted tag for better visibility */
 .highlight-tag {
-  @apply bg-elegance-pink/30 text-elegance-navy font-medium;
-}
-
-/* Compact section styling */
-.compact-section {
-  @apply py-10 px-4;
+  @apply bg-elegance-pink/50 text-elegance-navy font-medium;
 }
 
 /* Fixed footer */
 .fixed-footer {
-  @apply bg-elegance-navy/90 border-t border-elegance-pink/20 py-2;
+  @apply bg-elegance-navy/90 border-t border-elegance-pink/20 py-1;
 }
 
 /* Add masonry effect for collections grid */
@@ -114,12 +109,13 @@
   @apply text-white text-xl py-3 font-playfair hover:text-elegance-pink transition-colors;
 }
 
-/* Mobile optimized collection card */
-.mobile-collection-card {
-  @apply relative overflow-hidden rounded-lg shadow-md h-48;
+/* Hide scrollbar for mobile contact cards */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-/* Responsive testimonial */
-.responsive-testimonial {
-  @apply p-4 bg-white rounded-lg shadow-md;
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }
+
