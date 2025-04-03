@@ -1,9 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Crown, Star, Users, MapPin, Phone, Mail, Heart, Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import Logo from '@/components/Logo';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription
+} from '@/components/ui/dialog';
 import {
   Carousel,
   CarouselContent,
@@ -14,7 +19,6 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import Testimonial from '@/components/Testimonial';
 import CraftsmenCarousel from '@/components/CraftsmenCarousel';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -38,8 +42,7 @@ const Index = () => {
     if (!isMobile) {
       const masonryItems = document.querySelectorAll('.masonry-item');
       masonryItems.forEach((item) => {
-        // Further reduced row span to make images less tall
-        const randomSpan = Math.floor(Math.random() * 6) + 10; // random number between 10-16, further reduced height
+        const randomSpan = Math.floor(Math.random() * 6) + 10;
         (item as HTMLElement).style.setProperty('--row-span', randomSpan.toString());
       });
     }
@@ -151,9 +154,9 @@ const Index = () => {
 
   return (
     <div className="bg-white">
-      {/* Header with hamburger menu for mobile */}
+      {/* Header */}
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md border-b border-elegance-pink/20' : 'bg-transparent'
+        isScrolled ? 'bg-white shadow-sm' : 'bg-white'
       }`}>
         <div className="container mx-auto px-4 py-3">
           <nav className="flex justify-between items-center">
@@ -190,16 +193,16 @@ const Index = () => {
         </div>
       )}
 
-      {/* Hero Section with Clean White Background */}
-      <section className="relative min-h-screen flex items-center justify-center bg-white">
+      {/* Hero Section with White Background */}
+      <section className="relative min-h-screen flex items-center justify-center bg-white py-12">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2574&auto=format&fit=crop" 
             alt="Jewelry crafting background" 
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-5"
           />
         </div>
-        <div className="container relative z-10 mx-auto text-center px-4 pt-16 pb-6">
+        <div className="container relative z-10 mx-auto text-center px-4 pt-16">
           <span className="inline-block mb-4 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
             Exclusive Jewelry Crafting
           </span>
@@ -224,10 +227,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features - More Compact */}
-      <section className="py-8 px-4 bg-white">
+      {/* Features Section - More Compact */}
+      <section className="py-6 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
               Why Choose Us
             </span>
@@ -268,10 +271,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Collections Section - Moved above Team section & with improved mobile view */}
-      <section id="collections" className="py-8 px-4">
+      {/* Collections Section - Above Team Section */}
+      <section id="collections" className="py-6 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
               Our Showcase
             </span>
@@ -281,11 +284,11 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Mobile Optimized Grid View (replacing carousel) */}
+          {/* Mobile Grid View */}
           {isMobile && (
             <div className="grid grid-cols-2 gap-3">
               {collections.map((item) => (
-                <div key={item.id} className="mb-4">
+                <div key={item.id} className="mb-3">
                   <div className="relative overflow-hidden rounded-lg shadow-md h-44">
                     <img 
                       src={item.imageUrl} 
@@ -350,9 +353,9 @@ const Index = () => {
       </section>
 
       {/* Meet Our Craftsmen Section - More Compact */}
-      <section className="py-8 px-4 bg-elegance-pink/5">
+      <section className="py-6 px-4 bg-elegance-pink/5">
         <div className="container mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
               The Team
             </span>
@@ -366,10 +369,10 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Customer Testimonials Section - Mobile Optimized */}
-      <section className="py-8 px-4 bg-white">
+      {/* Testimonials Section - Mobile Optimized */}
+      <section className="py-6 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
               Customer Stories
             </span>
@@ -423,7 +426,7 @@ const Index = () => {
       </section>
       
       {/* About Us Section - More Compact */}
-      <section id="about" className="py-8 px-4 bg-elegance-pink/5">
+      <section id="about" className="py-6 px-4 bg-elegance-pink/5">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -450,7 +453,7 @@ const Index = () => {
               <img 
                 src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2574&auto=format&fit=crop" 
                 alt="Gold workshop" 
-                className="rounded-lg shadow-lg h-32 object-cover mt-8"
+                className="rounded-lg shadow-lg h-32 object-cover"
               />
               <img 
                 src="https://images.unsplash.com/photo-1609798740348-6abc47801170?q=80&w=2670&auto=format&fit=crop" 
@@ -467,21 +470,21 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Contact Section - More Compact with Mobile Optimization */}
-      <section id="contact" className="py-8 px-4 bg-elegance-navy text-elegance-white">
+      {/* Contact Section - Horizontal Cards for Mobile */}
+      <section id="contact" className="py-6 px-4 bg-elegance-navy text-elegance-white">
         <div className="container mx-auto">
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <span className="inline-block mb-2 px-4 py-1 bg-elegance-pink/20 text-elegance-pink rounded-full font-inter text-sm">
               Get In Touch
             </span>
             <h2 className="font-playfair text-2xl font-bold mb-2">Contact Us</h2>
             <p className="font-inter text-elegance-white/70 max-w-2xl mx-auto text-sm">
-              Have questions about our collections or custom orders? Reach out to us, and our team will be happy to assist you.
+              Have questions about our collections or custom orders? Reach out to us.
             </p>
           </div>
           
-          {/* Horizontal layout for mobile */}
-          {isMobile ? (
+          {/* Horizontal scrolling cards for mobile */}
+          {isMobile && (
             <div className="flex overflow-x-auto pb-4 gap-3 hide-scrollbar">
               <motion.div 
                 className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20 min-w-[200px] flex-shrink-0"
@@ -513,7 +516,10 @@ const Index = () => {
                 <p className="font-inter text-elegance-white/70 text-xs">custom@asjewellers.com</p>
               </motion.div>
             </div>
-          ) : (
+          )}
+          
+          {/* Desktop grid layout */}
+          {!isMobile && (
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <motion.div 
                 className="text-center p-4 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
@@ -549,7 +555,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Collection Subcategory Dialog */}
+      {/* Collection Subcategory Dialog - Pinterest Style */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogTitle className="text-center text-elegance-navy font-playfair text-xl">
@@ -582,10 +588,10 @@ const Index = () => {
         </DialogContent>
       </Dialog>
       
-      {/* Footer - Reduced Height, Fixed, Static position after landing page scroll */}
-      <footer className={`py-1 text-elegance-white/80 ${showFooter ? 'fixed-footer fixed bottom-0 w-full z-40' : 'bg-elegance-navy py-2'}`}>
+      {/* Footer - Fixed after scroll with reduced height */}
+      <footer className={`${showFooter ? 'fixed-footer fixed bottom-0 w-full z-40' : 'bg-elegance-navy py-1'} border-t border-elegance-pink/20`}>
         <div className="container mx-auto px-4">
-          <div className="flex flex-row justify-between items-center">
+          <div className="flex justify-between items-center py-2">
             <Logo size="sm" />
             <div className="flex space-x-3">
               <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
@@ -602,8 +608,8 @@ const Index = () => {
               </a>
             </div>
           </div>
-          <div className="flex justify-center text-xs mt-1">
-            <p className="font-inter">© 2024 A.S Jewellers. All rights reserved.</p>
+          <div className="text-center text-xs py-1">
+            <p className="font-inter text-elegance-white/80">© 2024 A.S Jewellers. All rights reserved.</p>
           </div>
         </div>
       </footer>
