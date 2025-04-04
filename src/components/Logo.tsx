@@ -20,11 +20,12 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false }: LogoProps) 
   const secondPartColor = 'text-elegance-pink';
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center flex-col md:flex-row">
       <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
         <span className={firstPartColor}>A.S</span>
         <span className={secondPartColor}> Jewellers</span>
       </span>
+      <span className={`${firstPartColor} text-xs ml-1 ${isFooter ? 'md:ml-2' : 'md:ml-2'}`}>Since 1992</span>
     </div>
   );
 };

@@ -11,20 +11,17 @@ const ContactSection = () => {
     <section id="contact" className="py-6 px-4 bg-elegance-navy text-elegance-white">
       <div className="container mx-auto">
         <div className="text-center mb-4">
-          <span className="inline-block mb-2 px-4 py-1 bg-elegance-pink/20 text-elegance-pink rounded-full font-inter text-sm">
-            Get In Touch
-          </span>
           <h2 className="font-playfair text-2xl font-bold mb-2">Contact Us</h2>
           <p className="font-inter text-elegance-white/70 max-w-2xl mx-auto text-sm mb-6">
             Have questions about our collections or custom orders? Reach out to us.
           </p>
         </div>
         
-        {/* Horizontal scrolling cards for mobile */}
+        {/* Mobile layout - stacked cards instead of horizontal scroll */}
         {isMobile && (
-          <div className="flex overflow-x-auto pb-4 gap-3 hide-scrollbar">
+          <div className="flex flex-col gap-4">
             <motion.div 
-              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20 min-w-[200px] flex-shrink-0"
+              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
@@ -33,7 +30,7 @@ const ContactSection = () => {
               <p className="font-inter text-elegance-white/70 text-xs">123 Elegance Boulevard, Gold District, 10001</p>
             </motion.div>
             <motion.div 
-              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20 min-w-[200px] flex-shrink-0"
+              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
@@ -43,7 +40,7 @@ const ContactSection = () => {
               <p className="font-inter text-elegance-white/70 text-xs">Monday - Saturday: 9am - 7pm</p>
             </motion.div>
             <motion.div 
-              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20 min-w-[200px] flex-shrink-0"
+              className="text-center p-3 rounded-2xl bg-elegance-navy/50 backdrop-blur border border-elegance-pink/20"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
