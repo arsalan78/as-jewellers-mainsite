@@ -48,15 +48,6 @@ const Index = () => {
         {/* Meet Our Craftsmen Section */}
         <section className="py-6 px-4 bg-elegance-pink/5">
           <div className="container mx-auto">
-            <div className="text-center mb-4">
-              <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
-                The Team
-              </span>
-              <h2 className="font-playfair text-2xl font-bold text-elegance-navy mb-2">Meet Our Craftsmen</h2>
-              <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto text-sm">
-                The skilled artisans behind every masterpiece in our collection.
-              </p>
-            </div>
             <CraftsmenCarousel />
           </div>
         </section>

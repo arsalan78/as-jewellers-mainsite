@@ -22,19 +22,24 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
   const sinceColor = isFooter ? 'text-white/80' : 'text-elegance-navy';
 
   return (
-    <div className={`flex flex-col ${isScrolled ? 'items-start' : 'items-center md:items-start'}`}>
+    <div className={`flex flex-col ${isScrolled ? 'items-start' : 'items-center'}`}>
       <div className="flex items-center">
         <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
           <span className={firstPartColor}>A.S</span>
           <span className={secondPartColor}> Jewellers</span>
         </span>
-        <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium`}>Since 1992</span>
+        <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium ${isFooter && isMobile ? 'ml-auto' : ''}`}>Since 1992</span>
       </div>
       {showTagline && (
         <span className={`${firstPartColor} text-sm italic mt-1`}>Trust • Purity • Elegance</span>
       )}
     </div>
   );
+};
+
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth < 768;
 };
 
 export default Logo;
