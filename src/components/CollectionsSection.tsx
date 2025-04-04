@@ -119,7 +119,7 @@ const CollectionsSection = () => {
           <div className="grid grid-cols-2 gap-3">
             {collections.map((item) => (
               <div key={item.id} className="mb-3">
-                <div className="relative overflow-hidden rounded-lg shadow-md h-44">
+                <div className="relative overflow-hidden rounded-lg shadow-md border border-elegance-pink/20 h-44">
                   <img 
                     src={item.imageUrl} 
                     alt={item.title} 
@@ -132,7 +132,7 @@ const CollectionsSection = () => {
                         <button 
                           key={idx} 
                           onClick={() => handleSubcategoryClick(sub)}
-                          className="inline-block px-2 py-0.5 bg-elegance-pink/30 backdrop-blur-sm text-white text-xs rounded-full"
+                          className="inline-block px-2 py-0.5 bg-elegance-blue/30 backdrop-blur-sm text-white text-xs rounded-full"
                         >
                           {sub}
                         </button>
@@ -151,7 +151,7 @@ const CollectionsSection = () => {
             {collections.map((item) => (
               <motion.div 
                 key={item.id}
-                className="masonry-item relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="masonry-item relative overflow-hidden rounded-xl shadow-lg border border-elegance-pink/20 hover:border-elegance-blue/30 transition-colors duration-300"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
@@ -168,7 +168,7 @@ const CollectionsSection = () => {
                       <button 
                         key={idx} 
                         onClick={() => handleSubcategoryClick(sub)}
-                        className="inline-block px-3 py-1 bg-elegance-pink/40 backdrop-blur-sm text-white text-xs rounded-full hover:bg-elegance-pink/60 transition-colors"
+                        className="inline-block px-3 py-1 bg-elegance-blue/40 backdrop-blur-sm text-white text-xs rounded-full hover:bg-elegance-pink/60 transition-colors"
                       >
                         {sub}
                       </button>
@@ -183,8 +183,8 @@ const CollectionsSection = () => {
 
       {/* Collection Subcategory Dialog - Pinterest Style */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-y-auto">
-          <DialogTitle className="text-center text-elegance-navy font-playfair text-xl">
+        <DialogContent className="sm:max-w-3xl max-h-[80vh] overflow-y-auto border border-elegance-pink/30">
+          <DialogTitle className="text-center text-elegance-navy font-playfair text-xl border-b border-elegance-blue/20 pb-2">
             {selectedSubcategory}
           </DialogTitle>
           <DialogDescription className="text-center mb-4">
@@ -193,8 +193,8 @@ const CollectionsSection = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {selectedSubcategory && subcategoryItems[selectedSubcategory]?.map((item) => (
-              <div key={item.id} className="group">
-                <div className="relative rounded-lg overflow-hidden shadow-md">
+              <div key={item.id} className="group border border-elegance-pink/20 rounded-lg overflow-hidden hover:border-elegance-blue/30 transition-colors">
+                <div className="relative">
                   <img 
                     src={item.image} 
                     alt={item.name} 
@@ -204,7 +204,7 @@ const CollectionsSection = () => {
                     <Heart className="w-8 h-8 text-elegance-pink" />
                   </div>
                 </div>
-                <div className="mt-2">
+                <div className="p-3">
                   <h4 className="text-elegance-navy font-playfair text-sm font-medium">{item.name}</h4>
                   <p className="text-elegance-navy/70 text-xs">{item.description}</p>
                 </div>
@@ -218,3 +218,4 @@ const CollectionsSection = () => {
 };
 
 export default CollectionsSection;
+

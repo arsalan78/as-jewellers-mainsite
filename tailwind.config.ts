@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,19 +19,27 @@ export default {
     },
     extend: {
       colors: {
-        // New color palette from the image
         elegance: {
           navy: "#181F39",
           purple: "#5C5C78", 
-          pink: "#DFC3C2",
+          pink: {
+            DEFAULT: "#DFC3C2",
+            light: "#FFDEE2",
+            dark: "#D46A7E"
+          },
+          blue: {
+            DEFAULT: "#5C5C78", 
+            light: "#D3E4FD",
+            dark: "#304352"
+          },
           white: "#F7F7F7",
         },
-        gold: "#DFC3C2", // Changed from blue to soft pink
-        silver: "#5C5C78", // Changed to slate purple
-        cream: "#F7F7F7", // Changed to white
-        dark: "#181F39", // Changed to navy
+        gold: "#DFC3C2",
+        silver: "#5C5C78",
+        cream: "#F7F7F7",
+        dark: "#181F39",
         trust: {
-          blue: "#5C5C78", // Updated to match the new palette
+          blue: "#5C5C78",
           navy: "#181F39",
           slate: "#5C5C78",
           light: "#F7F7F7",
