@@ -119,6 +119,11 @@
   @apply text-white text-xl py-3 font-playfair hover:text-elegance-pink transition-colors;
 }
 
+/* Fix contact section scrolling on mobile */
+.contact-section-mobile {
+  @apply flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3 mt-3;
+}
+
 /* Hide scrollbar for mobile contact cards */
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */

@@ -15,9 +15,13 @@ const Footer = ({ showFooter }: FooterProps) => {
           <div className="flex items-center">
             <Logo size="sm" isFooter={true} />
           </div>
-          <div className="text-xs text-elegance-white/80 mx-4 hidden md:block">
-            © 2024 A.S Jewellers. All rights reserved.
+          
+          <div className="flex items-center space-x-4 md:space-x-8 text-xs text-elegance-white/80">
+            <a href="#" className="hover:text-elegance-pink">Privacy Policy</a>
+            <a href="#" className="hover:text-elegance-pink">Terms & Conditions</a>
+            <a href="#" className="hover:text-elegance-pink hidden md:block">FAQ</a>
           </div>
+          
           <div className="flex space-x-3">
             <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
               <Heart className="h-4 w-4" />
@@ -32,7 +36,8 @@ const Footer = ({ showFooter }: FooterProps) => {
               <ShieldCheck className="h-4 w-4" />
             </a>
           </div>
-          <div className="text-xs text-elegance-white/80 w-full text-center md:hidden mt-1">
+          
+          <div className="text-xs text-elegance-white/80 w-full text-center mt-1 md:hidden">
             © 2024 A.S Jewellers. All rights reserved.
           </div>
         </div>

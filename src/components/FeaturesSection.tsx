@@ -7,15 +7,6 @@ const FeaturesSection = () => {
   return (
     <section className="py-6 px-4 bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-4">
-          <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
-            Why Choose Us
-          </span>
-          <h2 className="font-playfair text-2xl font-bold mb-2 text-elegance-navy">Our Expertise</h2>
-          <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto text-sm">
-            With decades of experience in gold and silver craftsmanship, we deliver unparalleled quality and service.
-          </p>
-        </div>
         <div className="grid md:grid-cols-3 gap-3">
           <motion.div 
             className="text-center p-3 rounded-2xl bg-white shadow-md border border-elegance-pink/10"
