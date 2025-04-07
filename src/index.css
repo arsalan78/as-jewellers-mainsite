@@ -79,12 +79,12 @@
 
 /* Highlighted tag for better visibility */
 .highlight-tag {
-  @apply bg-elegance-pink/80 text-elegance-navy font-medium;
+  @apply bg-[#f472b6]/80 text-elegance-navy font-medium;
 }
 
 /* Fixed footer */
 .fixed-footer {
-  @apply bg-elegance-navy border-t border-elegance-pink/20 py-1;
+  @apply bg-elegance-navy border-t border-[#f472b6]/20 py-1;
 }
 
 /* Add masonry effect for collections grid */
@@ -116,7 +116,7 @@
 }
 
 .mobile-menu-link {
-  @apply text-white text-xl py-3 font-playfair hover:text-elegance-pink transition-colors;
+  @apply text-white text-xl py-3 font-playfair hover:text-[#f472b6] transition-colors;
 }
 
 /* Fix contact section scrolling on mobile */
@@ -132,4 +132,19 @@
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    @apply px-3;
+  }
+  
+  .flex-col-mobile {
+    @apply flex-col items-center;
+  }
+  
+  .text-center-mobile {
+    @apply text-center;
+  }
 }

@@ -5,11 +5,13 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-6 px-4 bg-elegance-navy text-white">
       <div className="container mx-auto">
+        <div className="flex justify-center mb-4">
+          <span className="inline-block px-4 py-1 highlight-tag rounded-full font-inter text-sm">
+            Our Expertise
+          </span>
+        </div>
         <div className="grid md:grid-cols-2 gap-6 items-center">
           <div>
-            <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
-              Our Expertise
-            </span>
             <h2 className="font-playfair text-2xl font-bold text-white mb-2">
               With decades of experience in gold and silver craftsmanship, we deliver unparalleled quality and service.
             </h2>

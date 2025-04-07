@@ -24,7 +24,7 @@ const ContactSection = () => {
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >
-            <MapPin className="w-6 h-6 md:w-7 md:h-7 text-[#db2777] mx-auto mb-1 md:mb-2" />
+            <MapPin className="w-6 h-6 md:w-7 md:h-7 text-[#f472b6] mx-auto mb-1 md:mb-2" />
             <h3 className="font-playfair text-base md:text-lg mb-1">Visit Us</h3>
             <p className="font-inter text-elegance-navy/70 text-xs md:text-sm">123 Elegance Boulevard, Gold District, 10001</p>
           </motion.div>
@@ -34,7 +34,7 @@ const ContactSection = () => {
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >
-            <Phone className="w-6 h-6 md:w-7 md:h-7 text-[#db2777] mx-auto mb-1 md:mb-2" />
+            <Phone className="w-6 h-6 md:w-7 md:h-7 text-[#f472b6] mx-auto mb-1 md:mb-2" />
             <h3 className="font-playfair text-base md:text-lg mb-1">Call Us</h3>
             <p className="font-inter text-elegance-navy/70 text-xs md:text-sm">+1 (800) 123-4567</p>
             <p className="font-inter text-elegance-navy/70 text-xs md:text-sm">Monday - Saturday: 9am - 7pm</p>
@@ -45,7 +45,7 @@ const ContactSection = () => {
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
           >
-            <Mail className="w-6 h-6 md:w-7 md:h-7 text-[#db2777] mx-auto mb-1 md:mb-2" />
+            <Mail className="w-6 h-6 md:w-7 md:h-7 text-[#f472b6] mx-auto mb-1 md:mb-2" />
             <h3 className="font-playfair text-base md:text-lg mb-1">Email Us</h3>
             <p className="font-inter text-elegance-navy/70 text-xs md:text-sm">info@asjewellers.com</p>
             <p className="font-inter text-elegance-navy/70 text-xs md:text-sm">custom@asjewellers.com</p>
