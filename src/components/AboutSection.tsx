@@ -3,21 +3,23 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-6 px-4 bg-elegance-pink/5">
+    <section id="about" className="py-6 px-4 bg-elegance-navy text-white">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-6 items-center">
           <div>
             <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
-              Our Story
+              Our Expertise
             </span>
-            <h2 className="font-playfair text-2xl font-bold text-elegance-navy mb-2">About A.S Jewellers</h2>
-            <p className="font-inter text-elegance-navy/80 mb-2 leading-relaxed text-sm">
+            <h2 className="font-playfair text-2xl font-bold text-white mb-2">
+              With decades of experience in gold and silver craftsmanship, we deliver unparalleled quality and service.
+            </h2>
+            <p className="font-inter text-white/80 mb-2 leading-relaxed text-sm">
               Founded with a vision to create jewelry that tells stories, A.S Jewellers has been crafting exquisite gold and silver pieces for over three decades. Each piece embodies our dedication to quality craftsmanship and timeless design.
             </p>
-            <p className="font-inter text-elegance-navy/80 mb-2 leading-relaxed text-sm">
+            <p className="font-inter text-white/80 mb-2 leading-relaxed text-sm">
               What sets us apart is our dedication to traditional craftsmanship while embracing modern design principles. Each piece is meticulously handcrafted by our team of experienced artisans.
             </p>
-            <p className="font-inter text-elegance-navy/80 leading-relaxed text-sm">
+            <p className="font-inter text-white/80 leading-relaxed text-sm">
               We believe that jewelry is more than just an accessory – it's a personal statement, a family heirloom, and a timeless treasure. This philosophy guides our design process and customer service approach.
             </p>
           </div>

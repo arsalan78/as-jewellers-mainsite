@@ -33,19 +33,19 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
           <div className={`hidden md:flex space-x-8 font-inter ${isScrolled ? '' : 'mx-auto'}`}>
             <a 
               href="#collections" 
-              className="text-elegance-blue-dark hover:text-elegance-pink transition-colors"
+              className={`${isScrolled ? 'text-elegance-blue-dark' : 'text-white font-medium'} hover:text-elegance-pink transition-colors`}
             >
               Collections
             </a>
             <a 
               href="#about" 
-              className="text-elegance-blue-dark hover:text-elegance-pink transition-colors"
+              className={`${isScrolled ? 'text-elegance-blue-dark' : 'text-white font-medium'} hover:text-elegance-pink transition-colors`}
             >
               About
             </a>
             <a 
               href="#contact" 
-              className="text-elegance-blue-dark hover:text-elegance-pink transition-colors"
+              className={`${isScrolled ? 'text-elegance-blue-dark' : 'text-white font-medium'} hover:text-elegance-pink transition-colors`}
             >
               Contact
             </a>
@@ -53,7 +53,7 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
           
           {/* Mobile Menu Button */}
           {isMobile && (
-            <button onClick={toggleMobileMenu} className={`text-elegance-navy p-1 ${!isScrolled ? 'ml-auto' : ''}`}>
+            <button onClick={toggleMobileMenu} className={`${isScrolled ? 'text-elegance-navy' : 'text-white'} p-1 ${!isScrolled ? 'ml-auto' : ''}`}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           )}

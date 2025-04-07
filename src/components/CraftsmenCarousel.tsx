@@ -51,6 +51,13 @@ const craftsmen: CraftsmanProps[] = [
 const CraftsmenCarousel = () => {
   return (
     <div className="w-full max-w-5xl mx-auto">
+      <div className="text-center mb-6">
+        <h2 className="font-playfair text-2xl font-bold text-elegance-navy mb-2">Meet Our Craftsmen</h2>
+        <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto text-sm mb-4">
+          The skilled artisans behind every masterpiece in our collection.
+        </p>
+      </div>
+      
       <Carousel opts={{ align: "start", loop: true }}>
         <CarouselContent>
           {craftsmen.map((craftsman, index) => (

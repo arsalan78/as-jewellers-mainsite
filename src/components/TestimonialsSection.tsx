@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto">
         <div className="text-center mb-4">
           <span className="inline-block mb-2 px-4 py-1 highlight-tag rounded-full font-inter text-sm">
-            Customer Stories
+            Testimonials
           </span>
           <h2 className="font-playfair text-2xl font-bold text-elegance-navy mb-2">What Our Clients Say</h2>
           <p className="font-inter text-elegance-navy/70 max-w-2xl mx-auto text-sm">

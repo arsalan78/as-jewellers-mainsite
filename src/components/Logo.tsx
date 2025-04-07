@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type LogoProps = {
   size?: 'sm' | 'md' | 'lg';
@@ -9,6 +10,8 @@ type LogoProps = {
 };
 
 const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline = false }: LogoProps) => {
+  const isMobile = useIsMobile();
+  
   // Size classes based on the size prop
   const sizeClasses = {
     sm: 'text-xl',
@@ -19,7 +22,8 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
   // Determine text colors based on context
   const firstPartColor = isFooter ? 'text-white' : isScrolled ? 'text-elegance-navy' : 'text-white';
   const secondPartColor = 'text-elegance-pink';
-  const sinceColor = isFooter ? 'text-white/80' : 'text-elegance-navy';
+  const sinceColor = isFooter ? 'text-white/90' : isScrolled ? 'text-elegance-navy/90' : 'text-white/90';
+  const taglineColor = isFooter ? 'text-white/90' : isScrolled ? 'text-elegance-navy/90' : 'text-white/90';
 
   return (
     <div className={`flex flex-col ${isScrolled ? 'items-start' : 'items-center'}`}>
@@ -28,18 +32,15 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
           <span className={firstPartColor}>A.S</span>
           <span className={secondPartColor}> Jewellers</span>
         </span>
-        <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium ${isFooter && isMobile ? 'ml-auto' : ''}`}>Since 1992</span>
+        <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium ${isFooter && isMobile ? 'ml-auto' : ''}`}>
+          Since 1992
+        </span>
       </div>
       {showTagline && (
-        <span className={`${firstPartColor} text-sm italic mt-1`}>Trust • Purity • Elegance</span>
+        <span className={`${taglineColor} text-sm italic mt-1`}>Trust • Purity • Elegance</span>
       )}
     </div>
   );
-};
-
-const isMobile = () => {
-  if (typeof window === 'undefined') return false;
-  return window.innerWidth < 768;
 };
 
 export default Logo;
