@@ -13,26 +13,29 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-elegance-navy/10 pt-16">
-      <div className="absolute inset-0 z-0 bg-elegance-navy/10"></div>
-      <div className="container relative z-10 mx-auto text-center px-4 pt-16 flex flex-col items-center">
-        <img 
-          src="/lovable-uploads/df867d0d-9e97-45d8-8b8e-57a1990003f2.png" 
-          alt="A.S Jewellers Logo" 
-          className="w-48 h-48 mb-8"
-        />
-        <div className="mb-8 flex justify-center">
+    <section className="relative min-h-screen flex items-center justify-center bg-elegance-navy text-white pt-16">
+      <div className="container relative z-10 mx-auto text-center px-4 flex flex-col items-center justify-center space-y-4">
+        <div className="mb-4">
+          <img 
+            src="/lovable-uploads/df867d0d-9e97-45d8-8b8e-57a1990003f2.png" 
+            alt="A.S Jewellers Logo" 
+            className="w-32 h-32 mx-auto mb-4"
+          />
+        </div>
+        
+        <div className="mb-4 flex justify-center">
           <Logo size="lg" showTagline={true} />
         </div>
-        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-elegance-navy mb-4 leading-tight">
+        
+        <h2 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-4">
           Crafting Timeless
-          <span className="bg-gradient-to-r from-[#db2777] via-[#db2777] to-[#db2777] bg-clip-text text-transparent animate-shine">
-            {" "}Elegance
-          </span>
+          <span className="text-[#db2777] ml-2">Elegance</span>
         </h2>
-        <p className="font-inter text-elegance-navy max-w-2xl mx-auto mb-6 text-lg font-semibold bg-white/70 backdrop-blur-sm p-3 rounded-lg">
+        
+        <p className="font-inter text-white max-w-2xl mx-auto mb-6 text-base text-center bg-elegance-navy/70 p-3 rounded-lg">
           Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
         </p>
+        
         <div className="flex flex-col items-center">
           <a href="#collections">
             <motion.button 
@@ -45,7 +48,7 @@ const HeroSection = () => {
           </a>
           
           <motion.div 
-            className="mt-6 cursor-pointer"
+            className="mt-4 cursor-pointer"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
             onClick={scrollToCollections}
