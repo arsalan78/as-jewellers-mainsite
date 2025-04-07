@@ -15,13 +15,13 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
   // Size classes based on the size prop
   const sizeClasses = {
     sm: 'text-xl',
-    md: 'text-2xl',
-    lg: 'text-4xl'
+    md: 'text-3xl',
+    lg: 'text-5xl'
   };
 
   // Determine text colors based on context
   const firstPartColor = isFooter ? 'text-white' : isScrolled ? 'text-elegance-navy' : 'text-white';
-  const secondPartColor = 'text-elegance-pink';
+  const secondPartColor = 'text-[#db2777]';
   const sinceColor = isFooter ? 'text-white/90' : isScrolled ? 'text-elegance-navy/90' : 'text-white/90';
   const taglineColor = isFooter ? 'text-white/90' : isScrolled ? 'text-elegance-navy/90' : 'text-white/90';
 

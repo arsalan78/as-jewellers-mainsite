@@ -20,24 +20,24 @@ const Footer = ({ showFooter }: FooterProps) => {
           </div>
           
           <div className="flex items-center flex-wrap space-x-3 md:space-x-6 text-xs text-elegance-white/80 order-3 md:order-2 w-full md:w-auto justify-start md:justify-center">
-            <a href="#" className="hover:text-elegance-pink">Privacy Policy</a>
-            <a href="#" className="hover:text-elegance-pink">Terms & Conditions</a>
-            <a href="#" className="hover:text-elegance-pink">FAQ</a>
-            <a href="#" className="hover:text-elegance-pink">Shipping Info</a>
-            <a href="#" className="hover:text-elegance-pink">Returns</a>
+            <a href="#" className="hover:text-[#db2777]">Privacy Policy</a>
+            <a href="#" className="hover:text-[#db2777]">Terms & Conditions</a>
+            <a href="#" className="hover:text-[#db2777]">FAQ</a>
+            <a href="#" className="hover:text-[#db2777]">Shipping Info</a>
+            <a href="#" className="hover:text-[#db2777]">Returns</a>
           </div>
           
           <div className="flex space-x-3 order-2 md:order-3">
-            <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
+            <a href="#" className="text-elegance-white hover:text-[#db2777] transition-colors">
               <Heart className="h-4 w-4" />
             </a>
-            <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
+            <a href="#" className="text-elegance-white hover:text-[#db2777] transition-colors">
               <Star className="h-4 w-4" />
             </a>
-            <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
+            <a href="#" className="text-elegance-white hover:text-[#db2777] transition-colors">
               <Crown className="h-4 w-4" />
             </a>
-            <a href="#" className="text-elegance-white hover:text-elegance-pink transition-colors">
+            <a href="#" className="text-elegance-white hover:text-[#db2777] transition-colors">
               <ShieldCheck className="h-4 w-4" />
             </a>
           </div>

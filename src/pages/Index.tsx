@@ -17,11 +17,13 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const isMobile = useIsMobile();
   const [showFooter, setShowFooter] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setShowFooter(window.scrollY > window.innerHeight * 0.5);
+      setShowHeader(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -33,8 +35,8 @@ const Index = () => {
 
   return (
     <div className="bg-white relative">
-      {/* Header */}
-      <Header mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+      {/* Header - Only show after scrolling */}
+      {showHeader && <Header mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />}
       
       {/* Mobile Menu Overlay */}
       {isMobile && <MobileMenu isOpen={mobileMenuOpen} onClose={toggleMobileMenu} />}
