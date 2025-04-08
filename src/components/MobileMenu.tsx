@@ -14,9 +14,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         <X size={24} />
       </button>
       <div className="flex flex-col items-center space-y-6">
-        <a href="#collections" className="mobile-menu-link" onClick={onClose}>Collections</a>
-        <a href="#about" className="mobile-menu-link" onClick={onClose}>About</a>
-        <a href="#contact" className="mobile-menu-link" onClick={onClose}>Contact</a>
+        <a href="#collections" className="text-[#f472b6] text-xl py-3 font-playfair hover:text-[#f472b6]/80 transition-colors" onClick={onClose}>Collections</a>
+        <a href="#about" className="text-[#f472b6] text-xl py-3 font-playfair hover:text-[#f472b6]/80 transition-colors" onClick={onClose}>About</a>
+        <a href="#contact" className="text-[#f472b6] text-xl py-3 font-playfair hover:text-[#f472b6]/80 transition-colors" onClick={onClose}>Contact</a>
       </div>
     </div>
   );

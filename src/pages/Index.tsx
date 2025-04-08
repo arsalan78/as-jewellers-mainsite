@@ -44,7 +44,14 @@ const Index = () => {
       {/* Main Content Sections */}
       <main>
         <HeroSection />
-        <FeaturesSection />
+        
+        <section className="py-6 px-4">
+          <div className="container mx-auto">
+            <h2 className="font-playfair text-2xl font-bold mb-6 text-center">Our Expertise</h2>
+            <FeaturesSection />
+          </div>
+        </section>
+        
         <CollectionsSection />
         
         {/* Meet Our Craftsmen Section */}
@@ -55,7 +62,14 @@ const Index = () => {
         </section>
         
         <TestimonialsSection />
-        <AboutSection />
+        
+        <section id="about" className="py-6 px-4 bg-elegance-navy text-white">
+          <div className="container mx-auto">
+            <h2 className="font-playfair text-2xl font-bold mb-6 text-center text-white">About Us</h2>
+            <AboutSection />
+          </div>
+        </section>
+        
         <ContactSection />
       </main>
       

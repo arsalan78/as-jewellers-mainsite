@@ -24,7 +24,6 @@ const Footer = ({ showFooter }: FooterProps) => {
             <a href="#" className="hover:text-[#f472b6]">Terms & Conditions</a>
             <a href="#" className="hover:text-[#f472b6]">FAQ</a>
             <a href="#" className="hover:text-[#f472b6]">Shipping Info</a>
-            <a href="#" className="hover:text-[#f472b6]">Returns</a>
           </div>
           
           <div className="flex space-x-3 order-2 md:order-3">

@@ -29,23 +29,23 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
         <nav className="flex justify-between items-center">
           {isScrolled && <Logo isScrolled={isScrolled} showTagline={isScrolled} />}
           
-          {/* Desktop Navigation */}
-          <div className={`hidden md:flex space-x-8 font-inter ${isScrolled ? '' : 'mx-auto'}`}>
+          {/* Desktop Navigation - right-aligned */}
+          <div className={`hidden md:flex ml-auto space-x-8 font-inter`}>
             <a 
               href="#collections" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-white font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6] transition-colors`}
+              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
             >
               Collections
             </a>
             <a 
               href="#about" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-white font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6] transition-colors`}
+              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
             >
               About
             </a>
             <a 
               href="#contact" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-white font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6] transition-colors`}
+              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
             >
               Contact
             </a>
