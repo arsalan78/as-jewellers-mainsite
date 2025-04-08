@@ -13,7 +13,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-elegance-navy text-white border-8 border-[#d4af37]/70">
+    <section className="relative min-h-screen flex items-center justify-center bg-elegance-navy text-white border-[16px] border-white">
       <div className="container relative z-10 mx-auto text-center px-4 flex flex-col items-center justify-center py-12">
         <div className="mb-1">
           <img 
@@ -27,7 +27,7 @@ const HeroSection = () => {
           <Logo size="lg" showTagline={true} />
         </div>
         
-        <h2 className="font-playfair text-lg md:text-xl font-bold text-white">
+        <h2 className="font-playfair text-base md:text-lg font-bold text-white">
           Crafting Timeless
           <span className="bg-gradient-to-r from-[#d4af37] via-[#f472b6] to-[#d4af37] bg-clip-text text-transparent animate-shine ml-2">Elegance</span>
         </h2>

@@ -27,15 +27,31 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
 
   return (
     <div className={`flex flex-col ${isScrolled ? 'items-start' : 'items-center'}`}>
-      <div className="flex items-center">
-        <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
-          <span className={firstPartColor}>A.S</span>
-          <span className={secondPartColor}> Jewellers</span>
-        </span>
-        <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium ${isFooter && isMobile ? 'ml-auto' : ''}`}>
-          Since 1992
-        </span>
-      </div>
+      {isMobile && !isScrolled && !isFooter ? (
+        // Mobile version with stacked layout for landing page
+        <div className="flex flex-col items-center">
+          <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
+            <span className={firstPartColor}>A.S</span>
+          </span>
+          <span className={`font-playfair font-bold ${sizeClasses[size]} -mt-3`}>
+            <span className={secondPartColor}>Jewellers</span>
+          </span>
+          <span className={`${sinceColor} text-xs mt-1 font-medium`}>
+            Since 1992
+          </span>
+        </div>
+      ) : (
+        // Desktop version or scrolled/footer mobile version
+        <div className="flex items-center">
+          <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
+            <span className={firstPartColor}>A.S</span>
+            <span className={secondPartColor}> Jewellers</span>
+          </span>
+          <span className={`${sinceColor} text-xs ml-1 md:ml-2 font-medium ${isFooter && isMobile ? 'ml-auto' : ''}`}>
+            Since 1992
+          </span>
+        </div>
+      )}
       {showTagline && (
         <span className={`${taglineColor} text-sm italic mt-1`}>Trust • Purity • Elegance</span>
       )}

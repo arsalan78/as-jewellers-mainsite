@@ -33,19 +33,19 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
           <div className={`hidden md:flex ml-auto space-x-8 font-inter`}>
             <a 
               href="#collections" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
             >
               Collections
             </a>
             <a 
               href="#about" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
             >
               About
             </a>
             <a 
               href="#contact" 
-              className={`${isScrolled ? 'text-[#f472b6]' : 'text-[#f472b6] font-medium bg-elegance-navy/70 px-3 py-1 rounded'} hover:text-[#f472b6]/80 transition-colors`}
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
             >
               Contact
             </a>
