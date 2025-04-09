@@ -53,9 +53,9 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
             </div>
           )}
           
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button with increased padding */}
           {isMobile && (
-            <button onClick={toggleMobileMenu} className={`${isScrolled ? 'text-elegance-navy' : 'text-white'} p-1 ${!isScrolled ? 'ml-auto' : ''}`}>
+            <button onClick={toggleMobileMenu} className={`${isScrolled ? 'text-elegance-navy' : 'text-white'} p-3 ${!isScrolled ? 'ml-auto' : ''}`}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           )}

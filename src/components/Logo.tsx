@@ -33,10 +33,10 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
           <span className={`font-playfair font-bold ${sizeClasses[size]}`}>
             <span className={firstPartColor}>A.S</span>
           </span>
-          <span className={`font-playfair font-bold ${sizeClasses[size]} -mt-3`}>
+          <span className={`font-playfair font-bold ${sizeClasses[size]} mt-1`}>
             <span className={secondPartColor}>Jewellers</span>
           </span>
-          <span className={`${sinceColor} text-xs mt-1 font-medium`}>
+          <span className={`${sinceColor} text-xs mt-2 font-medium`}>
             Since 1992
           </span>
         </div>
@@ -53,7 +53,7 @@ const Logo = ({ size = 'md', isScrolled = false, isFooter = false, showTagline =
         </div>
       )}
       {showTagline && (
-        <span className={`${taglineColor} text-sm italic mt-1`}>Trust • Purity • Elegance</span>
+        <span className={`${taglineColor} text-sm italic mt-3`}>Trust • Purity • Elegance</span>
       )}
     </div>
   );

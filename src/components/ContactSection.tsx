@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -18,8 +19,8 @@ const ContactSection = () => {
         </div>
         
         {isMobile ? (
-          // Mobile Accordion Layout
-          <div className="max-w-md mx-auto">
+          // Mobile Accordion Layout with more padding at the bottom
+          <div className="max-w-md mx-auto pb-16">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="visit-us" className="border-b border-[#f472b6]/20">
                 <AccordionTrigger className="flex items-center py-3 text-elegance-navy hover:no-underline">

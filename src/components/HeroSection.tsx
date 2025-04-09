@@ -27,43 +27,46 @@ const HeroSection = () => {
           <Logo size="lg" showTagline={true} />
         </div>
         
-        <h2 className="font-playfair text-base md:text-lg font-bold text-white">
+        <h2 className="font-playfair text-base md:text-lg font-bold text-white mt-4">
           Crafting Timeless
           <span className="bg-gradient-to-r from-[#d4af37] via-[#f472b6] to-[#d4af37] bg-clip-text text-transparent animate-shine ml-2">Elegance</span>
         </h2>
         
-        <p className="font-inter text-white max-w-lg mx-auto mb-4 text-xs text-center bg-elegance-navy/70 p-2 rounded-lg">
+        <p className="font-inter text-white max-w-lg mx-auto mb-8 text-xs text-center bg-elegance-navy/70 p-2 rounded-lg">
           Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
         </p>
         
-        {/* Navigation Links Styled Like Button */}
-        <div className="flex space-x-4 my-4">
-          <motion.a 
-            href="#collections"
-            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Collections
-          </motion.a>
+        {/* Navigation Links Styled Like Link text with dots */}
+        <div className="flex space-x-10 my-6">
+          <div className="flex flex-col items-center">
+            <a 
+              href="#collections"
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+            >
+              Collections
+            </a>
+            <div className="w-1.5 h-1.5 rounded-full bg-white mt-1"></div>
+          </div>
           
-          <motion.a 
-            href="#about"
-            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            About
-          </motion.a>
+          <div className="flex flex-col items-center">
+            <a 
+              href="#about"
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+            >
+              About
+            </a>
+            <div className="w-1.5 h-1.5 rounded-full bg-white mt-1"></div>
+          </div>
           
-          <motion.a 
-            href="#contact"
-            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contact
-          </motion.a>
+          <div className="flex flex-col items-center">
+            <a 
+              href="#contact"
+              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+            >
+              Contact
+            </a>
+            <div className="w-1.5 h-1.5 rounded-full bg-white mt-1"></div>
+          </div>
         </div>
         
         <motion.div 
@@ -72,7 +75,7 @@ const HeroSection = () => {
           transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={scrollToCollections}
         >
-          <CircleChevronDown size={36} className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors" />
+          <CircleChevronDown size={36} className="text-white hover:text-white/80 transition-colors" />
         </motion.div>
       </div>
     </section>
