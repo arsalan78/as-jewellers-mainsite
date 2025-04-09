@@ -36,12 +36,12 @@ const HeroSection = () => {
           Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
         </p>
         
-        {/* Navigation Links Styled Like Link text with dots */}
-        <div className="flex space-x-10 my-6">
+        {/* Navigation Links with Hover Effects */}
+        <div className="flex space-x-10 my-4">
           <div className="flex flex-col items-center">
             <a 
               href="#collections"
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               Collections
             </a>
@@ -51,7 +51,7 @@ const HeroSection = () => {
           <div className="flex flex-col items-center">
             <a 
               href="#about"
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               About
             </a>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           <div className="flex flex-col items-center">
             <a 
               href="#contact"
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors font-inter text-sm md:text-base"
+              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               Contact
             </a>
@@ -75,7 +75,7 @@ const HeroSection = () => {
           transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={scrollToCollections}
         >
-          <CircleChevronDown size={36} className="text-white hover:text-white/80 transition-colors" />
+          <CircleChevronDown size={48} className="text-white hover:text-white/80 transition-colors" />
         </motion.div>
       </div>
     </section>
@@ -83,3 +83,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
