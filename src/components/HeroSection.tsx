@@ -27,21 +27,21 @@ const HeroSection = () => {
           <Logo size="lg" showTagline={true} />
         </div>
         
-        <h2 className="font-playfair text-base md:text-lg font-bold text-white mt-4">
+        <h2 className="font-playfair text-base md:text-lg font-bold text-white mt-8">
           Crafting Timeless
           <span className="bg-gradient-to-r from-[#d4af37] via-[#f472b6] to-[#d4af37] bg-clip-text text-transparent animate-shine ml-2">Elegance</span>
         </h2>
         
-        <p className="font-inter text-white max-w-lg mx-auto mb-8 text-xs text-center bg-elegance-navy/70 p-2 rounded-lg">
+        <p className="font-inter text-white max-w-lg mx-auto text-xs text-center bg-elegance-navy/70 p-2 rounded-lg">
           Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
         </p>
         
-        {/* Navigation Links with Hover Effects */}
-        <div className="flex space-x-10 my-4">
+        {/* Navigation Links with Hover Effects and gradient colors */}
+        <div className="flex space-x-10 mt-8 mb-4">
           <div className="flex flex-col items-center">
             <a 
               href="#collections"
-              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
+              className="bg-gradient-to-r from-[#f472b6] via-[#ffa500] to-[#d4af37] bg-clip-text text-transparent hover:from-[#61dafb] hover:via-[#ffffff] hover:to-[#61dafb] hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               Collections
             </a>
@@ -51,7 +51,7 @@ const HeroSection = () => {
           <div className="flex flex-col items-center">
             <a 
               href="#about"
-              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
+              className="bg-gradient-to-r from-[#f472b6] via-[#ffa500] to-[#d4af37] bg-clip-text text-transparent hover:from-[#61dafb] hover:via-[#ffffff] hover:to-[#61dafb] hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               About
             </a>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           <div className="flex flex-col items-center">
             <a 
               href="#contact"
-              className="text-[#f472b6] hover:text-white hover:underline transition-all duration-300 font-inter text-sm md:text-base"
+              className="bg-gradient-to-r from-[#f472b6] via-[#ffa500] to-[#d4af37] bg-clip-text text-transparent hover:from-[#61dafb] hover:via-[#ffffff] hover:to-[#61dafb] hover:underline transition-all duration-300 font-inter text-sm md:text-base"
             >
               Contact
             </a>
@@ -70,7 +70,7 @@ const HeroSection = () => {
         </div>
         
         <motion.div 
-          className="mt-2 cursor-pointer"
+          className="mt-2 cursor-pointer flex items-center justify-center"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           onClick={scrollToCollections}
@@ -83,4 +83,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

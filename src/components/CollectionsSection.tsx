@@ -118,21 +118,21 @@ const CollectionsSection = () => {
         {isMobile && (
           <div className="grid grid-cols-2 gap-3">
             {collections.map((item) => (
-              <div key={item.id} className="mb-3">
-                <div className="relative overflow-hidden rounded-lg shadow-md border border-elegance-pink/20 h-44">
+              <div key={item.id} className="mb-3 transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                <div className="relative overflow-hidden rounded-lg shadow-md border border-elegance-pink/20 h-44 group">
                   <img 
                     src={item.imageUrl} 
                     alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-3">
-                    <h3 className="text-white text-sm font-playfair font-semibold">{item.title}</h3>
+                  <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-3 group-hover:bg-elegance-navy/80 transition-all duration-300">
+                    <h3 className="text-white text-sm font-playfair font-semibold group-hover:text-[#f472b6] transition-colors duration-300">{item.title}</h3>
                     <div className="flex flex-wrap gap-1 mt-2">
                       {item.subcategories.map((sub, idx) => (
                         <button 
                           key={idx} 
                           onClick={() => handleSubcategoryClick(sub)}
-                          className="inline-block px-2 py-0.5 bg-elegance-blue/30 backdrop-blur-sm text-white text-xs rounded-full"
+                          className="inline-block px-2 py-0.5 bg-elegance-blue/30 backdrop-blur-sm text-white text-xs rounded-full transition-all duration-300 hover:bg-[#f472b6]/80 hover:text-white"
                         >
                           {sub}
                         </button>
@@ -151,24 +151,23 @@ const CollectionsSection = () => {
             {collections.map((item) => (
               <motion.div 
                 key={item.id}
-                className="masonry-item relative overflow-hidden rounded-xl shadow-lg border border-elegance-pink/20 hover:border-elegance-blue/30 transition-colors duration-300"
-                whileHover={{ y: -5 }}
-                transition={{ duration: 0.3 }}
+                className="masonry-item relative overflow-hidden rounded-xl shadow-lg border border-elegance-pink/20 hover:border-elegance-blue/30 transition-colors duration-300 group"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <img 
                   src={item.imageUrl} 
                   alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6">
-                  <h3 className="text-white text-xl font-playfair font-semibold">{item.title}</h3>
-                  <p className="text-white/90 text-sm mt-1">{item.description}</p>
+                <div className="absolute inset-0 collection-overlay flex flex-col justify-end p-6 group-hover:bg-elegance-navy/90 transition-all duration-300">
+                  <h3 className="text-white text-xl font-playfair font-semibold group-hover:text-[#f472b6] transition-colors duration-300">{item.title}</h3>
+                  <p className="text-white/90 text-sm mt-1 group-hover:text-white transition-colors duration-300">{item.description}</p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {item.subcategories.map((sub, idx) => (
                       <button 
                         key={idx} 
                         onClick={() => handleSubcategoryClick(sub)}
-                        className="inline-block px-3 py-1 bg-elegance-blue/40 backdrop-blur-sm text-white text-xs rounded-full hover:bg-elegance-pink/60 transition-colors"
+                        className="inline-block px-3 py-1 bg-elegance-blue/40 backdrop-blur-sm text-white text-xs rounded-full hover:bg-gradient-to-r hover:from-[#f472b6] hover:to-[#ffa500] hover:scale-105 transition-all duration-300"
                       >
                         {sub}
                       </button>
@@ -193,20 +192,20 @@ const CollectionsSection = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {selectedSubcategory && subcategoryItems[selectedSubcategory]?.map((item) => (
-              <div key={item.id} className="group border border-elegance-pink/20 rounded-lg overflow-hidden hover:border-elegance-blue/30 transition-colors">
+              <div key={item.id} className="group border border-elegance-pink/20 rounded-lg overflow-hidden hover:border-[#f472b6] hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                 <div className="relative">
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-elegance-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Heart className="w-8 h-8 text-elegance-pink" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-elegance-navy/80 via-elegance-navy/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Heart className="w-8 h-8 text-[#f472b6] group-hover:scale-125 transition-transform duration-300" />
                   </div>
                 </div>
-                <div className="p-3">
-                  <h4 className="text-elegance-navy font-playfair text-sm font-medium">{item.name}</h4>
-                  <p className="text-elegance-navy/70 text-xs">{item.description}</p>
+                <div className="p-3 group-hover:bg-elegance-navy/10 transition-colors duration-300">
+                  <h4 className="text-elegance-navy font-playfair text-sm font-medium group-hover:text-[#f472b6] transition-colors duration-300">{item.name}</h4>
+                  <p className="text-elegance-navy/70 text-xs group-hover:text-elegance-navy transition-colors duration-300">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -218,4 +217,3 @@ const CollectionsSection = () => {
 };
 
 export default CollectionsSection;
-

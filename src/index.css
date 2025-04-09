@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -157,6 +156,6 @@
 
   /* Fix accordion overlap with footer */
   .accordion-container {
-    margin-bottom: 70px;
+    margin-bottom: 100px;  /* Increased from 70px to 100px for more spacing */
   }
 }
