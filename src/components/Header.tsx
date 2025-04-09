@@ -29,27 +29,29 @@ const Header = ({ mobileMenuOpen, toggleMobileMenu }: HeaderProps) => {
         <nav className="flex justify-between items-center">
           {isScrolled && <Logo isScrolled={isScrolled} showTagline={isScrolled} />}
           
-          {/* Desktop Navigation - right-aligned */}
-          <div className={`hidden md:flex ml-auto space-x-8 font-inter`}>
-            <a 
-              href="#collections" 
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
-            >
-              Collections
-            </a>
-            <a 
-              href="#about" 
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
-            >
-              About
-            </a>
-            <a 
-              href="#contact" 
-              className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+          {/* Display links only when scrolled */}
+          {isScrolled && (
+            <div className={`hidden md:flex ml-auto space-x-8 font-inter`}>
+              <a 
+                href="#collections" 
+                className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
+              >
+                Collections
+              </a>
+              <a 
+                href="#about" 
+                className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
+              >
+                About
+              </a>
+              <a 
+                href="#contact" 
+                className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          )}
           
           {/* Mobile Menu Button */}
           {isMobile && (

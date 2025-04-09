@@ -36,26 +36,44 @@ const HeroSection = () => {
           Where tradition meets modern design. Each piece tells a unique story, crafted with precision and passion.
         </p>
         
-        <div className="flex flex-col items-center mt-2">
-          <a href="#collections">
-            <motion.button 
-              className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Collections
-            </motion.button>
-          </a>
-          
-          <motion.div 
-            className="mt-2 cursor-pointer"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            onClick={scrollToCollections}
+        {/* Navigation Links Styled Like Button */}
+        <div className="flex space-x-4 my-4">
+          <motion.a 
+            href="#collections"
+            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <CircleChevronDown size={36} className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors" />
-          </motion.div>
+            Collections
+          </motion.a>
+          
+          <motion.a 
+            href="#about"
+            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            About
+          </motion.a>
+          
+          <motion.a 
+            href="#contact"
+            className="bg-[#f472b6] text-white font-inter px-6 py-2 rounded-full hover:bg-[#f472b6]/80 transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contact
+          </motion.a>
         </div>
+        
+        <motion.div 
+          className="mt-2 cursor-pointer"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          onClick={scrollToCollections}
+        >
+          <CircleChevronDown size={36} className="text-[#f472b6] hover:text-[#f472b6]/80 transition-colors" />
+        </motion.div>
       </div>
     </section>
   );
